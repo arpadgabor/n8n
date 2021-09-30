@@ -27,6 +27,13 @@ export class InternalHooksClass implements IInternalHooksClass {
 		});
 	}
 
+	async onWorkflowSaved(workflow: IWorkflowBase): Promise<void> {
+		await this.telemetry.track('User saved workflow', {
+			workflow_id: workflow.id,
+			node_graph: TelemetryHelpers.generateNodesGraph(workflow).nodeGraph,
+		});
+	}
+
 	async onWorkflowPostExecute(workflow: IWorkflowBase, runData?: IRun): Promise<void> {
 		const properties: IDataObject = {
 			workflow_id: workflow.id,

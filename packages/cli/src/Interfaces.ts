@@ -307,10 +307,11 @@ export interface IDiagnosticInfo {
 }
 
 export interface IInternalHooksClass {
+	onN8nStop(): Promise<void>;
 	onServerStarted(diagnosticInfo: IDiagnosticInfo): Promise<void>;
 	onWorkflowDeleted(workflowId: string): Promise<void>;
+	onWorkflowSaved(workflow: IWorkflowBase): Promise<void>;
 	onWorkflowPostExecute(workflow: IWorkflowBase, runData?: IRun): Promise<void>;
-	onN8nStop(): Promise<void>;
 }
 
 export interface IN8nConfig {

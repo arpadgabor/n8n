@@ -431,7 +431,7 @@ export default mixins(
 
 					saveAs(blob, workflowName + '.json');
 				} else if (key === 'workflow-save') {
-					this.saveCurrentWorkflow(undefined, true);
+					this.saveCurrentWorkflow(undefined);
 				} else if (key === 'workflow-duplicate') {
 					this.$store.dispatch('ui/openDuplicateModal');
 				} else if (key === 'help-about') {

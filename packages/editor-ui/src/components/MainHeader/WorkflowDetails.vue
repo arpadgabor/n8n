@@ -141,7 +141,7 @@ export default mixins(workflowHelpers).extend({
 	},
 	methods: {
 		onSaveButtonClick () {
-			this.saveCurrentWorkflow(undefined, true);
+			this.saveCurrentWorkflow(undefined);
 		},
 		onTagsEditEnable() {
 			this.$data.appliedTagIds = this.currentWorkflowTagIds;
