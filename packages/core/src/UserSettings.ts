@@ -72,8 +72,8 @@ export async function prepareUserSettings(): Promise<IUserSettings> {
  * @export
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export async function getEncryptionKey() {
+
+export async function getEncryptionKey(): Promise<string | undefined> {
 	if (process.env[ENCRYPTION_KEY_ENV_OVERWRITE] !== undefined) {
 		return process.env[ENCRYPTION_KEY_ENV_OVERWRITE];
 	}
@@ -97,7 +97,6 @@ export async function getEncryptionKey() {
  * @export
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function getInstanceId(): Promise<string> {
 	const userSettings = await getUserSettings();
 
